@@ -14,10 +14,10 @@ This project contains the **Postman** files for API tests, along with illustrati
 ## 🖼️ Screenshots
 
 ### 🔹 Postman Interface
-![Postman Interface](images/screenshot1.png)
+![Postman Interface](images/screenshot1)
 
 ### 🔹 Collection Example
-![Postman Collection](images/screenshot2.png)
+![Postman Collection](images/screenshot2)
 
 
 
