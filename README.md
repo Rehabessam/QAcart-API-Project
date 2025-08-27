@@ -15,7 +15,7 @@ This project contains Postman files for API Testing.
 
 
 ### 🔹 Newman Example
-![Postman Collection](D:\QAcart\images)
+![Postman Collection](images/screenshot1.png)
 
 ---
 
