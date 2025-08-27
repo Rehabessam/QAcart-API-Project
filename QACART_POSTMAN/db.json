@@ -41,6 +41,10 @@
       "email": "rehabtester1111@gmail.com",
       "password": "$2a$10$b97l8CgxUM3XOloY5GqROuWcJTr4FEpP1RFyABK8xMvTrkcp46eYO",
       "id": 3
+    },
+    {
+      "email": "rehabqc@gmail.com",
+      "password": "rehabqc1234"
     }
   ]
 }
