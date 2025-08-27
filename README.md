@@ -1,3 +1,9 @@
+![GitHub repo size](https://img.shields.io/github/repo-size/Rehabessam/QAcart-API-Project?color=blue&style=for-the-badge)
+![GitHub stars](https://img.shields.io/github/stars/Rehabessam/QAcart-API-Project?color=yellow&style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/Rehabessam/QAcart-API-Project?color=green&style=for-the-badge)
+![Postman](https://img.shields.io/badge/Made%20with-Postman-orange?style=for-the-badge&logo=postman)
+![GitHub last commit](https://img.shields.io/github/last-commit/Rehabessam/QAcart-API-Project?color=red&style=for-the-badge)
+
 # QAcart API Project 🚀
 
 This project contains the **Postman** files for API tests, along with illustrative screenshots.
