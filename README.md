@@ -1,21 +1,25 @@
-# QAcart Project 🚀
+# QAcart API Project 🚀
 
-This project contains Postman files for API Testing.
+This project contains the **Postman** files for API tests, along with illustrative screenshots.
 
 ---
 
 ## 📌 Project Contents
-- Postman Collection (API Requests)
-- Postman Environment (Environment Settings)
+- **Postman Collection** (API requests)
+- **Postman Environment** (environment settings)
+- **Screenshots** (located in the 'images/' folder)
 
 ---
 
 ## 🖼️ Screenshots
 
+### 🔹 Postman Interface
+![Postman Interface](images/screenshot1.png)
+
+### 🔹 Collection Example
+![Postman Collection](images/screenshot2.png)
 
 
-### 🔹 Newman Example
-![Postman Collection](images/screenshot1.png)
 
 ---
 
