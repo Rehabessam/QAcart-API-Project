@@ -15,7 +15,7 @@ This project contains Postman files for API Testing.
 
 
 ### 🔹 Newman Example
-![Postman Collection](images/screenshot1)
+![Postman Collection](images/screenshot1.png)
 
 ---
 
