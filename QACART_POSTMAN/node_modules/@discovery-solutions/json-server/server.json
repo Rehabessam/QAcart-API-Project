@@ -1,0 +1,68 @@
+{
+  "name": "maoshe-server",
+  "config": {
+    "port": 3501,
+    "type": "rest",
+    "format": "json",
+    "request": {
+      "limit": 20
+    }
+  },
+  "entities": [
+    {
+      "name": "user",
+      "alias": "User",
+      "fields": {
+        "name": {
+          "type": "string",
+          "required": true
+        },
+        "email": {
+          "type": "string",
+          "required": true
+        },
+        "password": {
+          "type": "string",
+          "required": true
+        },
+        "prefix": "string",
+        "avatar": "string"
+      },
+      "auth": {
+        "type": "jwt",
+        "fields": [
+          "email",
+          "password"
+        ],
+        "secret": "MAOSHE-SECRET-AUTH-24-11",
+        "permission": {
+          "*": {
+            "insert": true,
+            "update": true,
+            "delete": true,
+            "list": true,
+            "get": true
+          }
+        }
+      }
+    },
+    {
+      "name": "project",
+      "alias": "Project",
+      "fields": {
+        "name": {
+          "type": "string",
+          "required": true
+        },
+        "slug": {
+          "type": "string",
+          "required": true
+        },
+        "content": {
+          "type": "object",
+          "required": true
+        }
+      }
+    }
+  ]
+}

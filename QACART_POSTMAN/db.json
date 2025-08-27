@@ -1,0 +1,46 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "title": "Postman",
+      "description": "Full postman course from zero in Arabic"
+    },
+    {
+      "id": "2",
+      "title": "Selenium",
+      "description": "Full Selenium course from zero in Arabic"
+    },
+    {
+      "id": "3",
+      "title": "Cypress",
+      "description": "Full Cypress course from zero in Arabic"
+    },
+    {
+      "id": "4",
+      "title": "Jenkins",
+      "description": "Full Jenkins course from zero in Arabic"
+    },
+    {
+      "id": "5",
+      "title": "Docker",
+      "description": "Full Docker course from zero in Arabic"
+    }
+  ],
+  "users": [
+    {
+      "email": "rehab@gmail.com",
+      "password": "$2a$10$eeRqQZhftFYAOEo8k/XZ2OA.ehv0GKIRUoDLcy0SMuGS3Wsi2al9W",
+      "id": 1
+    },
+    {
+      "email": "rehabelashri87@gmail.com",
+      "password": "$2a$10$PXbgt.pbMxIfDhC4C7treeNVGxaZr83OfbmwszKrpAhoa4IMNZxu2",
+      "id": 2
+    },
+    {
+      "email": "rehabtester1111@gmail.com",
+      "password": "$2a$10$b97l8CgxUM3XOloY5GqROuWcJTr4FEpP1RFyABK8xMvTrkcp46eYO",
+      "id": 3
+    }
+  ]
+}

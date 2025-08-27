@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "3b86b72f-93a7-48a1-889e-f50fbb54074a",
+		"name": "Courses API",
+		"description": "All the APIs that controls the courses in QAcart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43929725",
+		"_collection_link": "https://www.postman.com/rehab-1459209/workspace/rehab-elashri/collection/43929725-3b86b72f-93a7-48a1-889e-f50fbb54074a?action=share&source=collection_link&creator=43929725"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"var token = jsonData.accessToken\r",
+							"pm.environment.set(\"token\", token);\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"rehabtester1111@gmail.com\",\r\n  \"password\": \"Tester123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Course",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"var jsonFile = pm.response.json()\r",
+							"var courseID = jsonFile.id \r",
+							"pm.environment.set(\"courseID\", courseID);\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"title\": \"{{url}}\",\r\n      \"description\": \"Full {{url}} course from zero in Arabic\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/660/courses",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"660",
+						"courses"
+					]
+				},
+				"description": "To add a new course for QAcart"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Course",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check that the API response code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"/*pm.test(\"Check if the response contains Postman\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Postman\");\r",
+							"});*/\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"/*pm.test(\"Check the title of the first course\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.title).to.eql(\"Postman\");\r",
+							"});*/"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/660/courses/{{courseID}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"660",
+						"courses",
+						"{{courseID}}"
+					]
+				},
+				"description": "Get a specific course by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Course",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"title\": \"Appium\",\r\n      \"description\": \"Full Appium course from zero in Arabic\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/660/courses/{{courseID}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"660",
+						"courses",
+						"{{courseID}}"
+					]
+				},
+				"description": "To edit a specific course"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Course",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"title\": \"JavaScript\",\r\n      \"description\": \"Full JavaScript course from zero in Arabic\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/660/courses/{{courseID}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"660",
+						"courses",
+						"{{courseID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Course after delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check that the API response code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"title\": \"Appium\",\r\n      \"description\": \"Full Appium course from zero in Arabic\"\r\n    }"
+				},
+				"url": {
+					"raw": "{{url}}/660/courses/{{courseID}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"660",
+						"courses",
+						"{{courseID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
